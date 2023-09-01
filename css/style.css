@@ -66,3 +66,180 @@ h1, h2 {
     background-color: var(--blanco);
     padding: 5rem;
 }
+
+/* *******************Mis modificaciones ********************/
+/****1***/
+.d-flex {
+    /* Por defecto se colocan uno tras otro, porque se ponen
+    en flex direction row por defecto */
+    display: flex;
+    /* Al estar por defecto ya no es necesario ponerlo */
+    /* flex-direction: row; */
+}
+/****2***/
+.d-flex-2 {
+    display: flex;
+    /* Lo ponemos uno tras otro */
+    flex-direction: column;
+}
+/****3***/
+.d-flex-3 {
+    display: flex;
+    /* Alineamos horizontalmente */
+    /* Alineacion desde la izquierda - Por defecto */
+    justify-content: flex-start;
+    /* Alineacion desde la derecha*/
+    justify-content: flex-end;
+    /* Alineacion al centro*/
+    justify-content: center;
+    /* El contenido se distribuye a lo largo de todo el contenedor*/
+    /* Menos espacio a los laterales y uniforme al centro */
+    /* Muestra elementos con la misma separación alrededor de ellos. */
+    justify-content: space-around;
+     /* El contenido se distribuye a lo largo de todo el contenedor*/
+    /* Mas espacio a los laterales y uniforme al centro */
+    justify-content: space-evenly;
+    /* El contenido se distribuye a lo largo de todo el contenedor*/
+    /*  Muestra elementos con la misma distancia entre ellos. */
+    /* Un hijo al inicio otro al final y los demas se distribuyen de
+    manera uniforme al centro */
+    justify-content: space-between;
+}
+.d-flex-4 {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    /* Aqui el justify-content sirve para alinear verticalmente */
+     /* Alineacion de arriba a abajo - Por defecto */
+     justify-content: flex-start;
+     /* Alineacion de abajo a arriba*/
+     justify-content: flex-end;
+     /* Alineacion al centro*/
+     justify-content: center;
+     /* El contenido se distribuye a lo largo de todo el contenedor*/
+     /* Menos espacio a la parte superior e inferior y uniforme al centro */
+     justify-content: space-around;
+      /* El contenido se distribuye a lo largo de todo el contenedor*/
+     /* Mas espacio a a la parte superior e inferior y uniforme al centro */
+     justify-content: space-evenly;
+     /* El contenido se distribuye a lo largo de todo el contenedor*/
+     /* Un hijo al inicio otro al final y los demas se distribuyen de
+     manera uniforme al centro */
+     justify-content: space-between;
+}
+.d-flex-5 {
+    display: flex;
+    height: 700px;
+    /* align-items sirve para alinear verticalmente cuando se trabaja como rows */
+     /* Toma todo el height de su contenedor  - Por defecto */
+     align-items: stretch;
+    /* Sirve para alinear los elementos de arriba abajo */
+    align-items: flex-start;
+    /* Sirve para alinear los elementos de abajo arriba */
+    align-items: flex-end;
+     /* Toma como referencia la linea base del elemento para alinearlos */
+     align-items: baseline;
+      /* Sirve para alinear los elementos al centro */
+      align-items: center;
+}
+.d-flex-6 {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    /* align-items sirve para alinear horizontalmente cuando se trabaja como rows */
+     /* Toma todo el width de su contenedor  - Por defecto */
+     align-items: stretch;
+    /* Sirve para alinear los elementos de izquierda a derecha */
+    align-items: flex-start;
+    /* Sirve para alinear los elementos de derecha a izquierda */
+    align-items: flex-end;
+     /* Toma como referencia la linea base del elemento para alinearlos */
+     align-items: baseline;
+      /* Sirve para alinear los elementos al centro */
+      align-items: center;
+}
+.d-flex-7 {
+    display: flex;
+    height: 800px;
+    /* Alineamos verticalmente a la parte inferior */
+    align-items: flex-end;
+    /* Alineamos horizontalmente al center */
+    justify-content: center;
+}
+/* ******Flex Basis******* */
+/* Se aplica en los hijos */
+.d-flex-8 {
+    display: flex;
+}
+.d-flex-8 .box {
+    /* Cada uno de las cajas mide lo mismo */
+    flex-basis: 33.3%;
+    /* 200px es el valor inicial */
+    flex-basis: 200px;
+}
+/* ******Gap y Calc******* */
+/* Gap se aplica en los hijos */
+.d-flex-9 {
+    display: flex;
+    justify-content: space-between;
+}
+.d-flex-9 .box:nth-child(1) {
+    flex-basis: calc(50% - 1rem);
+}
+.d-flex-9 .box:nth-child(2),
+.d-flex-9 .box:nth-child(3)
+{
+    flex-basis: calc(25% - 1rem);
+}
+/* ******Flex Wrap******* */
+.d-flex-10 {
+    display: flex;
+    /* Damos un salto de línea */
+    flex-wrap: wrap;
+}
+.d-flex-10 .box {
+    flex-basis: 33.3%;
+}
+/* ******Flex Grow******* */
+/* Es el factor de crecimiento */
+/* El flex-grow por defecto es 0 */
+/* El flex grow acumula los px,rem,em de los que tenga el contenedor
+de acuerdo a su factor */
+.d-flex-11 {
+    display: flex;
+}
+.d-flex-11 .box:nth-child(1) {
+    flex-grow: 2;
+}
+.d-flex-11 .box:nth-child(2) {
+    flex-grow: 1;
+}
+.d-flex-11 .box:nth-child(3) {
+    flex-grow: 1;
+}
+/* ******Flex Shrink******* */
+.d-flex-12 {
+    display: flex;
+}
+.d-flex-12 .box {
+    /* Crecen con el mismo factor */
+    flex-grow: 1;
+    /* Teniendo una base de 300px */
+    flex-basis: 300px;
+}
+.d-flex-12 .box:nth-child(3) {
+    /*Es para hacerlo mas pequeño con respecto al resto de elementos */
+    flex-shrink: 2;
+}
+/* ******Flex Shorthand******* */
+.d-flex-13 {
+    display: flex;
+}
+.d-flex-13 .box {
+    /* flex-basis: 33.3%;
+    flex-grow: 1;
+    flex-shrink: 1; */
+    /* De manera resumida seria así */
+    /* flex-grow, flex-shrink, flex-basis */
+    flex: 1 1 33.3%;
+}
